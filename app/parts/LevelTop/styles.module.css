@@ -1,0 +1,6 @@
+.levelTop {
+  border: solid 2px var(--colorPrimaryBorder);
+  background-color: var(--colorStaticWhite);
+  color: var(--colorPrimaryText);
+  padding: 30px;
+}
