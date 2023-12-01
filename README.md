@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## 简介
+本仓库是基于Ant Design和CSS变量实现前端动态主题的实践代码示例，以Nextjs14创建。
+
+本项目演示范围包括：
+ - 如何通过传入theme来修改antd组件样式
+ - 如何通过css变量将antd组件样式与开发者自定义组件样式进行同步
+ - 一个通过React Context维护当前主题配置的主题切换组件
+ - 一个可以支持用户自定义生成主题的简易主题编辑器
+
+## 环境要求
+nodejs版本 >= 18
+
 ## Getting Started
 
 First, run the development server:
