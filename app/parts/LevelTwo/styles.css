@@ -1,0 +1,9 @@
+.levelTwo {
+  border: solid 2px var(--colorBorder);
+  background-color: var(--colorBgLayout);
+  color: var(--colorPrimaryText);
+
+  /* border: solid 2px #333; */
+  padding: 30px;
+  margin-top: 20px;
+}

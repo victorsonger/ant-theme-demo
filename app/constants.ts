@@ -14,14 +14,17 @@ const commonToken = {
 
 const antdThemeMap = {
   [AppThemeType.Blue]: {
-    algorithm: theme.defaultAlgorithm,
+    algorithm: theme.darkAlgorithm,
     token: {
       ...commonToken,
-      colorPrimary: "#232773",
+      colorPrimary: "#dedff5",
+      colorInfo: "#dedff5",
+      colorBgBase: "#24276f",
+      colorBgLayout: "#1a1c59",
     },
   },
   [AppThemeType.Red]: {
-    algorithm: theme.darkAlgorithm,
+    algorithm: theme.defaultAlgorithm,
     token: {
       ...commonToken,
       colorPrimary: "#e3425a",
@@ -71,7 +74,7 @@ const defaultCustomizeThemeParams = {
   token: {
     ...commonToken,
     colorPrimary: "#006eff",
-    colorBgBase: '#ffffff'
+    colorBgBase: "#ffffff",
   },
 };
 

@@ -28,7 +28,6 @@ const useCssVariables = (isGlobal?: boolean) => {
     `css-var-container-${generateRandomString(6)}`
   );
 
-  console.log("cssVarContainerID---", cssVarContainerID);
 
   const styleEleId = useMemo(() => {
     return isGlobal ? "style-is-global" : `style-${cssVarContainerID}`;
@@ -36,6 +35,7 @@ const useCssVariables = (isGlobal?: boolean) => {
 
   const { token } = theme.useToken();
   const setCssVariables = useCallback(() => {
+    console.log('setCssVariables token= /n', token);
     let styleEle = document.getElementById(styleEleId) as HTMLStyleElement;
     const isAlreadyHaveStyleEle = Boolean(styleEle);
     if (!isAlreadyHaveStyleEle) {

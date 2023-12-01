@@ -3,24 +3,32 @@ import { Card, ConfigProvider, ThemeConfig, theme } from "antd";
 import AntdComponentSample from "@/app/components/AntdComponentSample";
 import CssVariableSetter from "@/app/components/CssVariableSetter";
 
-import styles from "./styles.module.css";
-
-type MyProps = { xxx?: any };
+import "./styles.css";
 
 const levelTwoTheme: ThemeConfig = {
   algorithm: theme.defaultAlgorithm,
   inherit: false,
   token: {
-    colorPrimary: "#FFA500",
-    colorBgBase: "#3fbaa0",
+    colorPrimary: "#EAB75A",
+    colorBgBase: "#C8EADC",
   },
 };
 
-const LevelTwo: React.FunctionComponent<MyProps> = ({ xxx }) => {
+const LevelTwo: React.FunctionComponent = () => {
+  // return (
+  //   <div className="levelTwo">
+  //     <h2>LevelTwo</h2>
+
+  //     <Card>
+  //       <AntdComponentSample></AntdComponentSample>
+  //     </Card>
+  //   </div>
+  // );
+
   return (
     <ConfigProvider theme={levelTwoTheme}>
       <CssVariableSetter>
-        <div className={styles.levelTwo}>
+        <div className="levelTwo">
           <h2>LevelTwo</h2>
 
           <Card>

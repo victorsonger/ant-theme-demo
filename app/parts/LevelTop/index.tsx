@@ -5,17 +5,31 @@ import useThemeConfig from "@/app/hooks/useThemeConfig";
 import AntdComponentSample from "@/app/components/AntdComponentSample";
 import CssVariableSetter from "@/app/components/CssVariableSetter";
 
-import styles from "./styles.module.css";
+import "./styles.css";
 
 type MyProps = { xxx?: any };
 
 const LevelTop: React.FunctionComponent<MyProps> = ({ xxx }) => {
   const { themeConfig } = useThemeConfig();
+  // return (
+  //   <div className="levelTop">
+  //     <h1>LevelTop</h1>
+
+  //     <Card>
+  //       <div>
+  //         <br />
+  //         <AntdComponentSample />
+  //       </div>
+  //     </Card>
+  //      <LevelTwo />
+  //   </div>
+  // );
+
   return (
     <ConfigProvider theme={themeConfig}>
       <CssVariableSetter isGlobal />
 
-      <div className={styles.levelTop}>
+      <div className="levelTop">
         <h1>LevelTop</h1>
 
         <Card>
@@ -23,8 +37,9 @@ const LevelTop: React.FunctionComponent<MyProps> = ({ xxx }) => {
             <br />
             <AntdComponentSample />
           </div>
-          <LevelTwo />
         </Card>
+
+        <LevelTwo />
       </div>
     </ConfigProvider>
   );

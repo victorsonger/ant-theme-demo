@@ -28,9 +28,11 @@ export default function Home() {
           <Col span={6}>
             <ThemeChanger />
           </Col>
+
           <Col span={18}>
             <LevelTop />
           </Col>
+
         </Row>
       </AppGlobalContext.Provider>
     </div>
