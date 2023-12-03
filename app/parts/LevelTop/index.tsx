@@ -13,7 +13,7 @@ const LevelTop: React.FunctionComponent<MyProps> = ({ xxx }) => {
   const { themeConfig } = useThemeConfig();
   return (
     <ConfigProvider theme={themeConfig}>
-      <CssVariableSetter />
+      <CssVariableSetter isGlobal />
 
       <div className="levelTop">
         <h1>LevelTop</h1>
