@@ -11,27 +11,12 @@ type MyProps = { xxx?: any };
 
 const LevelTop: React.FunctionComponent<MyProps> = ({ xxx }) => {
   const { themeConfig } = useThemeConfig();
-  // return (
-  //   <div className="levelTop">
-  //     <h1>LevelTop</h1>
-
-  //     <Card>
-  //       <div>
-  //         <br />
-  //         <AntdComponentSample />
-  //       </div>
-  //     </Card>
-  //      <LevelTwo />
-  //   </div>
-  // );
-
   return (
     <ConfigProvider theme={themeConfig}>
-      <CssVariableSetter isGlobal />
+      <CssVariableSetter />
 
       <div className="levelTop">
         <h1>LevelTop</h1>
-
         <Card>
           <div>
             <br />

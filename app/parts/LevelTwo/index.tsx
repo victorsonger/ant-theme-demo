@@ -5,6 +5,7 @@ import CssVariableSetter from "@/app/components/CssVariableSetter";
 
 import "./styles.css";
 
+// 此层级使用静态配置，不随全局主题切换改变
 const levelTwoTheme: ThemeConfig = {
   algorithm: theme.defaultAlgorithm,
   inherit: false,
@@ -15,15 +16,6 @@ const levelTwoTheme: ThemeConfig = {
 };
 
 const LevelTwo: React.FunctionComponent = () => {
-  // return (
-  //   <div className="levelTwo">
-  //     <h2>LevelTwo</h2>
-
-  //     <Card>
-  //       <AntdComponentSample></AntdComponentSample>
-  //     </Card>
-  //   </div>
-  // );
 
   return (
     <ConfigProvider theme={levelTwoTheme}>

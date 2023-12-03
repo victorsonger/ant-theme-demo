@@ -1,5 +1,5 @@
 import useCssVariables from "./useCssVariables";
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 
 const CssVariableSetter: FC<{
   isGlobal?: boolean;
