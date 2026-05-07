@@ -10,7 +10,7 @@ import ThemeChanger from "@/app/parts/ThemeChanger";
 import LevelTop from "@/app/parts/LevelTop";
 
 export default function Home() {
-  const [appThemeType, setAppThemeType] = useState(AppThemeType.Blue);
+  const [appThemeType, setAppThemeType] = useState(AppThemeType.Red);
   const [customizeThemeParams, setCustomizeThemeParams] = useState<
     CustomizeThemeParams
   >(defaultCustomizeThemeParams);
