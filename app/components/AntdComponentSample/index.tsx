@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button, Col, Divider, Row, Select, Space, Steps, Flex } from "antd";
+import { Button, Divider, Flex, Select, Steps } from "antd";
 
 interface MyProps {}
 
@@ -27,15 +27,15 @@ const AntdComponentSample: FC<MyProps> = ({}) => {
         items={[
           {
             title: "Finished",
-            description,
+            content: description,
           },
           {
             title: "In Progress",
-            description,
+            content: description,
           },
           {
             title: "Waiting",
-            description,
+            content: description,
           },
         ]}
       />

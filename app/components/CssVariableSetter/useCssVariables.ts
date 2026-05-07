@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { theme } from "antd";
 import { generate } from "@ant-design/colors";
 
@@ -28,14 +28,12 @@ const useCssVariables = (isGlobal?: boolean) => {
     `css-var-container-${generateRandomString(6)}`
   );
 
-
   const styleEleId = useMemo(() => {
     return isGlobal ? "style-is-global" : `style-${cssVarContainerID}`;
   }, [cssVarContainerID, isGlobal]);
 
   const { token } = theme.useToken();
   const setCssVariables = useCallback(() => {
-    console.log('setCssVariables token= /n', token);
     let styleEle = document.getElementById(styleEleId) as HTMLStyleElement;
     const isAlreadyHaveStyleEle = Boolean(styleEle);
     if (!isAlreadyHaveStyleEle) {
@@ -89,12 +87,14 @@ const useCssVariables = (isGlobal?: boolean) => {
     cssVariablesString = `${styleRootSelector} { ${cssVariablesString} }`;
 
     // 将完整的css变量（包括选择器）内容写入对应的style标签
-    styleEle.innerHTML = cssVariablesString;
+    styleEle.textContent = cssVariablesString;
   }, [cssVarContainerID, isGlobal, styleEleId, token]);
 
   const clearCssVariables = useCallback(() => {
-    let styleEle = document.getElementById(styleEleId) as HTMLStyleElement;
-    styleEle.remove?.();
+    const styleEle = document.getElementById(
+      styleEleId
+    ) as HTMLStyleElement | null;
+    styleEle?.remove();
   }, [styleEleId]);
 
   useEffect(() => {
