@@ -1,7 +1,8 @@
 .theme-changer {
   width: 100%;
-  .ant-select {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+}
+
+.theme-changer .ant-select {
+  width: 100%;
+  margin-bottom: 20px;
 }
