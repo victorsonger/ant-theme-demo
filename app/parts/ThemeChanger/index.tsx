@@ -4,13 +4,12 @@ import {
   themeTypeOptions,
 } from "@/app/constants";
 import { AppGlobalContext } from "@/app/context/contextManager";
-import { ColorPicker, Flex, Select } from "antd";
+import { ColorPicker, Flex, Select, type ColorPickerProps } from "antd";
 import { FC, useContext } from "react";
 
 import "./index.css";
 import { ThemeAlgorithm } from "@/app/enums";
 import { CustomizeThemeTokens } from "@/app/hooks/useThemeConfig";
-import { Color } from "antd/es/color-picker";
 
 interface MyProps {}
 
@@ -33,27 +32,28 @@ const ThemeChanger: FC<MyProps> = ({}) => {
     setCustomizeThemeParams({ ...customizeThemeParams, token: newToken });
   };
 
-  const changeCustomizeThemePrimary = (color: Color) => {
+  const changeCustomizeThemePrimary = (
+    color: Parameters<NonNullable<ColorPickerProps["onChange"]>>[0],
+  ) => {
     const newToken = {
       ...customizeThemeParams.token,
       colorPrimary: color.toHexString(),
     };
-    console.log("newToken", newToken);
     changeCustomizeThemeToken(newToken);
   };
 
-  const changeCustomizeThemeBgBase = (color: Color) => {
+  const changeCustomizeThemeBgBase = (
+    color: Parameters<NonNullable<ColorPickerProps["onChange"]>>[0],
+  ) => {
     const newToken = {
       ...customizeThemeParams.token,
       colorBgBase: color.toHexString(),
     };
-    console.log("newToken", newToken);
     changeCustomizeThemeToken(newToken);
   };
 
   return (
     <div className="theme-changer">
-      
       <Select
         value={appThemeType}
         options={themeTypeOptions}

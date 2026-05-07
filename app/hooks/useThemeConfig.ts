@@ -1,11 +1,10 @@
 import { antdThemeMap, AppThemeType } from "@/app/constants";
 import { AppGlobalContext } from "@/app/context/contextManager";
 import { ThemeAlgorithm } from "@/app/enums";
-import { theme, ThemeConfig } from "antd";
-import { MapToken } from "antd/es/theme/interface";
-import { useContext, useMemo, useState } from "react";
+import { theme, type ThemeConfig } from "antd";
+import { useContext, useMemo } from "react";
 
-export type CustomizeThemeTokens = { [key in keyof MapToken]?: MapToken[key] };
+export type CustomizeThemeTokens = NonNullable<ThemeConfig["token"]>;
 export interface CustomizeThemeParams {
   themeAlgorithm: ThemeAlgorithm;
   token: CustomizeThemeTokens;
